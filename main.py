@@ -1,4 +1,4 @@
-from data_processing import download_nltk_resources, load_glove_model, load_and_process_data, print_random_samples, convert_to_tensors, traverse_and_vectorize, vectorize_glove, parse_tree,
+from data_processing import download_nltk_resources, load_glove_model, load_and_process_data, print_random_samples, convert_to_tensors, traverse_and_vectorize, vectorize_glove, parse_tree
 from model_definition import SimpleRNN
 from train_eval import train, evaluate
 import torch
@@ -7,6 +7,10 @@ import torch.nn as nn
 
 
 def main():
+
+    # Set device
+    device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+    
     # Download resources and load GloVe model
     download_nltk_resources()
     glove_path = 'glove.6B.300d.txt'
