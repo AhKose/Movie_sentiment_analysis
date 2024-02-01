@@ -21,18 +21,3 @@ class SimpleRNN(nn.Module):
         x = torch.cat((x, is_root.unsqueeze(-1).float()), dim=-1)
         x = self.fc(x)
         return x
-        
-if __name__ == "__main__":
-    # Placeholder for model instantiation and example usage
-    input_size = 300  # Size of GloVe vectors
-    hidden_size = 50  # RNN hidden layer size
-    num_classes = 5   # Assuming 5 sentiment classes for classification
-
-    model = SimpleRNN(input_size, hidden_size, num_classes)
-    print("Model structure: ", model)
-
-
-    model = SimpleRNN(input_size, hidden_size, num_classes)
-    print("Model structure: ", model)
-
-
