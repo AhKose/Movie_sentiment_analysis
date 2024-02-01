@@ -65,24 +65,3 @@ def print_random_samples(data, num_samples=5):
             print(f"Word: {sample[0]}, Is Root: {sample[3]}, Sentiment: {sample[2]}")
     else:
         print("No root samples found.")
-
-if __name__ == "__main__":
-    nltk.download('punkt')
-    nltk.download('stopwords')
-
-    # Load GloVe model
-    glove_path = 'glove.6B.300d.txt'  # Adjust path as necessary
-    glove_model = KeyedVectors.load_word2vec_format(glove_path, binary=False, no_header=True)
-
-    # Paths for your datasets
-    train_path = '/path/to/train.txt'
-    val_path = '/path/to/dev.txt'
-    test_path = '/path/to/test.txt'
-
-    # Load and process data
-    train_data = load_and_process_data(train_path, glove_model)
-    val_data = load_and_process_data(val_path, glove_model)
-    test_data = load_and_process_data(test_path, glove_model)
-
-    # Print random samples from the training data
-    print_random_samples(train_data)
