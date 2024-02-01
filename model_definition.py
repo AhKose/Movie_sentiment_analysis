@@ -9,10 +9,6 @@ def convert_to_tensors(data):
     is_root = torch.tensor([item[3] for item in data])
     return x, y, is_root
 
-train_x, train_y, train_is_root = convert_to_tensors(train_data)
-val_x, val_y, val_is_root = convert_to_tensors(val_data)
-test_x, test_y, test_is_root = convert_to_tensors(test_data)
-
 class SimpleRNN(nn.Module):
     def __init__(self, input_size, hidden_size, num_classes):
         super(SimpleRNN, self).__init__()
