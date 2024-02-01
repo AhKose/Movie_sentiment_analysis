@@ -1,7 +1,6 @@
 import torch
 import torch.optim as optim
 import torch.nn as nn
-from model_definition import SimpleRNN, convert_to_tensors
 from data_preprocessing import load_and_process_data, traverse_and_vectorize, vectorize_glove, parse_tree, print_random_samples  
 from model_definition import SimpleRNN, convert_to_tensors
 
