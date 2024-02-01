@@ -57,4 +57,6 @@ python evaluate.py
 ## License
 Distributed under the Apache License. See LICENSE for more information.
 
+## Data Samples
+![image](https://github.com/ahk19/Movie_sentiment_analysis/assets/48156018/fc763bd4-62a4-4d6e-ba0d-790e4737cd3e)
 
