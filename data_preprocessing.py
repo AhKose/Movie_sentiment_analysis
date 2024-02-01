@@ -1,9 +1,16 @@
 import random
 import nltk
-from gensim.models import KeyedVectors
+from gensim.models.keyedvectors import KeyedVectors
 from nltk.tree import Tree
 import numpy as np
 
+def download_nltk_resources():
+    nltk.download('punkt')
+    nltk.download('stopwords')
+    
+def load_glove_model(glove_path):
+    return KeyedVectors.load_word2vec_format(glove_path, binary=False, no_header=True)
+    
 # Function to parse a line into a tree structure
 def parse_tree(line):
     return Tree.fromstring(line)
@@ -45,6 +52,13 @@ def load_and_process_data(filename, glove_model):
                 print(f"Skipping problematic line: {line.strip()}")
                 continue
     return processed_data
+
+# Convert data to torch tensors
+def convert_to_tensors(data):
+    x = torch.tensor([item[1] for item in data], dtype=torch.float32)
+    y = torch.tensor([item[2] for item in data])
+    is_root = torch.tensor([item[3] for item in data])
+    return x, y, is_root
 
 # Function to print random samples with their labels for root and non-root
 def print_random_samples(data, num_samples=5):
