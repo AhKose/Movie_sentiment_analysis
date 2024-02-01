@@ -3,6 +3,7 @@ import nltk
 from gensim.models.keyedvectors import KeyedVectors
 from nltk.tree import Tree
 import numpy as np
+import torch
 
 def download_nltk_resources():
     nltk.download('punkt')
