@@ -1,4 +1,4 @@
-# Movie_sentiment_analysis
+# Movie sentiment analysis
 ---
 ## Overview
 
